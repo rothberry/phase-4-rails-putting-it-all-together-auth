@@ -9,6 +9,15 @@ class RecipesController < ApplicationController
     render json: recipe, status: :created
   end
 
+  def destroy
+    # as an admin, I can delete anyone's recipes
+    if @current_user.admin?
+      recipe = Recipe.find(params[:id])
+    else
+      render json: {error: "Not Admin yo"}, status: 401
+    end
+  end
+
   private
 
   def recipe_params

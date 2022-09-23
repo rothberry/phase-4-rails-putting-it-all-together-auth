@@ -8,6 +8,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    puts "\nSESSIONS\n"
+    p session
     render json: @current_user
   end
 

@@ -29,6 +29,13 @@ module Phase4RailsPuttingItAllTogetherAuth
     # https://owasp.org/www-community/SameSite
     config.action_dispatch.cookies_same_site_protection = :strict
 
+    # ! To use the RailsAdmin Gem
+    config.middleware.use ActionDispatch::Flash
+    config.middleware.use Rack::MethodOverride
+
+    # config.session_store :active_record_store, {expire_after: 1.minutes}
+    config.session_store :cookie_store, { expire_after: 100 }
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 

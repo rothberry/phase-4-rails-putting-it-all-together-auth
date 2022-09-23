@@ -11,22 +11,40 @@ function NavBar({ user, setUser }) {
       }
     });
   }
+  if (true) {
+    return (
+      <Wrapper>
+        <Logo>
+          <Link to="/">Reciplease</Link>
+        </Logo>
+        <Nav>
+          <Button as={Link} to="/new">
+            New Recipe
+          </Button>
+          <Button variant="outline" onClick={handleLogoutClick}>
+            Logout
+          </Button>
+        </Nav>
+      </Wrapper>
+    );
+  } else {
+    return (
+      <Wrapper>
+        <Logo>
+          <Link to="/">WOawwww</Link>
+        </Logo>
+        <Nav>
+          <Button as={Link} to="/new">
+            New Recipe
+          </Button>
+          <Button variant="outline" onClick={handleLogoutClick}>
+            Logout
+          </Button>
+        </Nav>
+      </Wrapper>
+    );
 
-  return (
-    <Wrapper>
-      <Logo>
-        <Link to="/">Reciplease</Link>
-      </Logo>
-      <Nav>
-        <Button as={Link} to="/new">
-          New Recipe
-        </Button>
-        <Button variant="outline" onClick={handleLogoutClick}>
-          Logout
-        </Button>
-      </Nav>
-    </Wrapper>
-  );
+  }
 }
 
 const Wrapper = styled.header`
