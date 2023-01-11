@@ -1,17 +1,20 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Context } from "../contexts/Context";
 import { Box, Button } from "../styles";
 
-function RecipeList() {
-  const [recipes, setRecipes] = useState([]);
+function RecipeList({re}) {
+  // const [recipes, setRecipes] = useState([]);
+  const {recipes } = useContext(Context)
 
-  useEffect(() => {
-    fetch("/recipes")
-      .then((r) => r.json())
-      .then(setRecipes);
-  }, []);
+  // useEffect(() => {
+  //   fetchRecipes()
+  //   // fetch("/recipes")
+  //   //   .then((r) => r.json())
+  //   //   .then(setRecipes);
+  // }, []);
 
   return (
     <Wrapper>
